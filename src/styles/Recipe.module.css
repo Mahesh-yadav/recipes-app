@@ -1,0 +1,95 @@
+.ThemeBlack {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+}
+
+.ThemeWhite {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+.Recipe {
+  position: relative;
+  height: 40rem;
+  --border-radius: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.2),
+    -2px -2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.RecipeImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+.RecipeOverlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.RecipeCategory {
+  background-color: #000000;
+  color: #ffffff;
+  align-self: flex-end;
+  width: 40%;
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 1rem 0;
+  text-transform: capitalize;
+  border-radius: 0 var(--border-radius) 0 var(--border-radius);
+}
+
+.RecipeDetails {
+  background: linear-gradient(
+    to top,
+    var(--bg-color) 0%,
+    var(--bg-color) 70%,
+    transparent
+  );
+  color: var(--text-color);
+  padding: 6rem 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.RecipeDetailsTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.RecipeName {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.RecipeDuration {
+  display: flex;
+  align-items: center;
+}
+
+.RecipeDuration span {
+  margin-left: 1rem;
+  font-size: 1.4rem;
+}
+
+.RecipeDesc {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.Red {
+  color: red;
+}

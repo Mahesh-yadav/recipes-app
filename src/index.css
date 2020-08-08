@@ -4,6 +4,14 @@
     url('./Assets/Fonts/Metropolis/Metropolis-Regular.otf');
 }
 
+@font-face {
+  font-family: 'Metropolis Regular';
+  src: local('Metropolis Regular'),
+    url('./Assets/Fonts/Metropolis/Metropolis-Bold.otf');
+  font-weight: bold;
+  font-style: normal;
+}
+
 html {
   box-sizing: border-box;
   font-size: 10px;
