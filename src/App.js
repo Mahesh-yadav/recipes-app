@@ -1,35 +1,17 @@
 import React from 'react';
 import Recipes from './components/Recipes';
-import './App.css';
-// import recipesData from './data.json';
+import useFetch from './hooks/useFetch';
 
-const data = [
-  {
-    id: 0,
-    name: 'Uthappizza',
-    image: 'https://i.imgur.com/tDnjTXf.jpg',
-    category: 'mains',
-    label: 'Hot',
-    price: '4.99',
-    description:
-      'A unique combination of Indian Uthappam (pancake) and Italian pizza',
-  },
-  {
-    id: 1,
-    name: 'Uthappizza',
-    image: 'https://i.imgur.com/tDnjTXf.jpg',
-    category: 'mains',
-    label: 'Hot',
-    price: '4.99',
-    description:
-      'A unique combination of Indian Uthappam (pancake) and Italian pizza',
-  },
-];
+import './App.css';
+
+const API_URI = 'http://starlord.hackerearth.com/recipe';
 
 function App() {
+  const { loading, data: recipes, error } = useFetch(API_URI);
+
   return (
     <div>
-      <Recipes recipes={data} />
+      <Recipes {...{ loading, recipes, error }} />
     </div>
   );
 }
