@@ -1,7 +1,10 @@
 import React from 'react';
 import classes from '../styles/Recipe.module.css';
+import { useHistory } from 'react-router-dom';
 
 function Recipe({ recipe }) {
+  const history = useHistory();
+
   return (
     <div
       className={`${classes.Recipe} ${
@@ -10,6 +13,14 @@ function Recipe({ recipe }) {
     >
       <img src={recipe.image} alt={recipe.name} className={classes.RecipeImg} />
       <div className={classes.RecipeOverlay}>
+        <div className={classes.RecipeHover}>
+          <button
+            onClick={() => history.push(`/${recipe.id}`)}
+            className={classes.BtnViewMore}
+          >
+            View More
+          </button>
+        </div>
         <h3 className={classes.RecipeCategory}>{`In ${recipe.category}`}</h3>
         <div className={classes.RecipeDetails}>
           <div className={classes.RecipeDetailsTop}>

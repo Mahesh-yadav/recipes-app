@@ -3,7 +3,7 @@
   width: 80vw;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 30rem);
+  grid-template-columns: repeat(auto-fit, 25rem);
   gap: 1.5rem;
   justify-content: center;
 }

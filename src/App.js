@@ -1,6 +1,8 @@
 import React from 'react';
 import Recipes from './components/Recipes';
 import useFetch from './hooks/useFetch';
+import { Switch, Route } from 'react-router-dom';
+import RecipeDetails from './components/RecipeDetails';
 
 import './App.css';
 
@@ -11,7 +13,14 @@ function App() {
 
   return (
     <div>
-      <Recipes {...{ loading, recipes, error }} />
+      <Switch>
+        <Route path="/" exact>
+          <Recipes {...{ loading, recipes, error }} />
+        </Route>
+        <Route path="/:id">
+          <RecipeDetails recipes={recipes} />
+        </Route>
+      </Switch>
     </div>
   );
 }
