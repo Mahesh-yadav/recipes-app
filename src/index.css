@@ -26,4 +26,19 @@ html {
 body {
   font-family: 'Metropolis Regular', sans-serif;
   background-color: #eee;
+  padding-top: 7rem;
+}
+
+@media (min-width: 768px) {
+  body {
+    background: url(./Assets//Images/Illustration2.png),
+      url(./Assets//Images/Illustration1.png),
+      url(./Assets/Images/Illustration4.png),
+      url(./Assets/Images/Illustration5.png),
+      url(./Assets/Images/Illustration3.png);
+    background-repeat: no-repeat;
+    background-position: top -30px right -30px, bottom -30px left -30px,
+      bottom -30px right -30px, bottom 200px right 50px, left 30px center;
+    background-size: 30rem, 30rem, 20rem, 5rem;
+  }
 }
