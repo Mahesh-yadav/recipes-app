@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import classes from '../styles/RecipeDetails.module.css';
 
-function RecipeDetails({ recipes = [] }) {
+function RecipeDetails({ recipes = [], favorites, updateFavorites }) {
   const { id } = useParams();
   const history = useHistory();
 
@@ -10,11 +10,21 @@ function RecipeDetails({ recipes = [] }) {
 
   if (!recipe) return null;
 
-  // Since recipe data is incomplete generating random stars
-  const stars = Math.ceil(Math.random() * 5) + 1;
+  // Since recipe data is incomplete setting star count
+  const stars = (recipe.id % 5) + 1;
 
   const getStars = (number) => {
-    return [...Array(number)].map(() => <i className="fas fa-star"></i>);
+    return [...Array(number)].map((num, index) => (
+      <i key={index} className="fas fa-star"></i>
+    ));
+  };
+
+  const toggleFavorites = () => {
+    if (favorites.includes(recipe.id)) {
+      updateFavorites(favorites.filter((f) => f !== recipe.id));
+    } else {
+      updateFavorites(favorites.concat(recipe.id));
+    }
   };
 
   return (
@@ -102,10 +112,15 @@ function RecipeDetails({ recipes = [] }) {
             </div>
           </div>
           <div className={classes.Favorite}>
-            <p>Favorite This recipe</p>
+            <p>
+              {favorites.includes(recipe.id)
+                ? 'Remove from favorites'
+                : 'Favorite This recipe'}
+            </p>
             <i
+              onClick={toggleFavorites}
               className={`${
-                recipe.id % 3 === 1
+                favorites.includes(recipe.id)
                   ? `fas fa-heart fa-2x ${classes.Red}`
                   : 'far fa-heart fa-2x'
               }`}

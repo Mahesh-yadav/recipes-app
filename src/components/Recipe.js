@@ -2,7 +2,7 @@ import React from 'react';
 import classes from '../styles/Recipe.module.css';
 import { useHistory } from 'react-router-dom';
 
-function Recipe({ recipe }) {
+function Recipe({ recipe, favorites }) {
   const history = useHistory();
 
   return (
@@ -33,7 +33,7 @@ function Recipe({ recipe }) {
             </div>
             <i
               className={`${
-                recipe.id % 3 === 1
+                favorites.includes(recipe.id)
                   ? `fas fa-heart fa-2x ${classes.Red}`
                   : 'far fa-heart fa-2x'
               }`}

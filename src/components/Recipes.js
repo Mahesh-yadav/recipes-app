@@ -3,7 +3,7 @@ import Recipe from './Recipe';
 import classes from '../styles/Recipes.module.css';
 import Loading from './Loading';
 
-function Recipes({ recipes, loading, error }) {
+function Recipes({ recipes, loading, error, favorites }) {
   let renderedOuput = null;
 
   if (loading) {
@@ -14,7 +14,7 @@ function Recipes({ recipes, loading, error }) {
     renderedOuput = (
       <div className={classes.Recipes}>
         {recipes.map((recipe) => (
-          <Recipe recipe={recipe} key={recipe.id} />
+          <Recipe recipe={recipe} favorites={favorites} key={recipe.id} />
         ))}
       </div>
     );

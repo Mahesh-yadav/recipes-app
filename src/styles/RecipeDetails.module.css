@@ -1,6 +1,5 @@
 .RecipeDetails {
-  padding-top: 3rem;
-  padding-bottom: 5rem;
+  padding: 7rem 0;
   width: 90vw;
   margin: 0 auto;
   display: flex;
@@ -9,6 +8,7 @@
 }
 
 .BtnBack {
+  padding: 1rem;
   margin: 3rem 0;
   background: transparent;
   border: none;
@@ -100,7 +100,7 @@
 }
 
 .Stars {
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 .Stars span {
@@ -204,6 +204,10 @@
   border-radius: var(--border-radius);
   cursor: pointer;
   border: none;
+}
+
+.Red {
+  color: red;
 }
 
 @media (min-width: 576px) {
